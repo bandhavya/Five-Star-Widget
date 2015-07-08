@@ -1,20 +1,16 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
-disabledStar{
-	color: #ccc;
-}
-
-#starSet > i:hover:before{
-color:rgb(247, 220, 111);
+#starSet > i:hover:before {
+    color: rgb(247, 220, 111);
 }
 
 div ~ i:hover {
-	color:red;
+    color: red;
 }
 
-.fullStar:before{
-	font-family: FontAwesome;
-   /* font-style: normal;
+.fullStar:before {
+    font-family: FontAwesome;
+    /* font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
     color: #000;
@@ -23,108 +19,121 @@ div ~ i:hover {
     position: absolute;
     top: 10px;
     left: 0;*/
-	content: "\f005";
+    
+    content: "\f005";
 }
 
-.fullStar:checked{
-	content:"\f006";
+.fullStar:checked {
+    content: "\f006";
+}
+/*fieldset style*/
+
+fieldset,
+label {
+    margin: 0;
+    padding: 0;
 }
 
-
-/*label:hover:before{
-	color:red;
+body {
+    margin: 20px;
 }
 
-label:hover:after{
-	color : green;
-}*/
-
-/*New style*/
-
-fieldset, label { margin: 0; padding: 0; }
-body{ margin: 20px; }
-h1 { font-size: 1.5em; margin: 10px; }
-
+h1 {
+    font-size: 1.5em;
+    margin: 10px;
+}
 /****** Style Star Rating Widget *****/
 
-.rating { 
-  border: none;
-  float: left;
+.rating {
+    border: none;
+    float: left;
 }
 
-.rating > input { display: none; } 
-.rating > label:before { 
-  margin: 5px;
-  font-size: 1.25em;
-  font-family: FontAwesome;
-  display: inline-block;
-  content: "\f005";
+.rating > input {
+    display: none;
 }
 
-.rating > .half:before { 
-  content: "\f089";
-  position: absolute;
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
 }
 
-.rating > label { 
-  color: #ddd; 
- float: right; 
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
 }
 
+.rating > label {
+    color: #ddd;
+    float: right;
+}
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+.rating > input:checked ~ label,
+/* show gold star when clicked */
 
-.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating:not(:checked) > label:hover,
+/* hover current star */
+
+.rating:not(:checked) > label:hover ~ label {
+    color: #FFD700;
+}
+/* hover previous stars in list */
+
+.rating > input:checked + label:hover,
+/* hover current star when changing rating */
+
 .rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+.rating > label:hover ~ input:checked ~ label,
+/* lighten current selection */
 
+.rating > input:checked ~ label:hover ~ label {
+    color: #FFED85;
+}
+/*end of fieldset style*/
+/* Custom ratingStars.......*/
 
-/* ratingStars.......*/
-.ratingStars{
-	margin:0px;
-	float:left;
+.ratingStars {
+    margin: 0px;
+    float: left;
 }
 
-.ratingStars > input{ /*this wil give all input elements in .ratingstar class. 
+.ratingStars > input {
+    /*this wil give all input elements in .ratingstar class. 
 	to hide radio button*/
-	display: none;
+    
+    display: none;
 }
-
 /*to set initial color to the star*/
-.ratingStars > label{
-	color:#ccc;
-	float: right;
-}
 
+.ratingStars > label {
+    color: #ccc;
+    float: right;
+}
 /*all the label children of ratingStars*/
-.ratingStars > label:before{
-	margin: 5px;
-  font-size: 1.25em;
-  font-family: FontAwesome;
-	display: "inline-block";
-	content:"\f005";
+
+.ratingStars > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: "inline-block";
+    content: "\f005";
 }
 
-.ratingStars > input:checked ~ label, /*input which is checked and 
+.ratingStars > input:checked ~ label,
+/*input which is checked and 
 all the labels after checked radio*/
-.ratingStars:not(:checked) > label:hover, /*on star label hover change color*/
-.ratingStars:not(:checked) > label:hover ~ label /*to select all label which are 
+
+.ratingStars:not(:checked) > label:hover,
+/*on star label hover change color*/
+
+.ratingStars:not(:checked) > label:hover ~ label
+/*to select all label which are 
 placed after label hover elem*/
+
 {
-	color: rgb(247, 220, 111);
-}
-
-.ratingStars > input:checked + label:hover,
-.ratingStars > input:checked ~ label:hover,
-.ratingStars > label:hover ~ input:checked ~ label,
-.ratingStars > input:checked ~ label:hover ~ label{
-	color:blue;
-}
-
-.ratingStars > input:checked {
-	background-color:red;
+    color: rgb(247, 220, 111);
 }
